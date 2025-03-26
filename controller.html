@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTZ Control Panel</title>
+    <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+    <link href="
+    https://cdn.jsdelivr.net/npm/primeicons@7.0.0/primeicons.min.css
+    " rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #5B3C88;
+        }
+        .ptz-container {
+            display: grid;
+            grid-template-columns: repeat(3, 80px);
+            grid-template-rows: repeat(4, 80px);
+            gap: 10px;
+            background: #292929;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .ptz-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #404040;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+        .ptz-button:hover {
+            background: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <div class="ptz-container">
+        <button class="ptz-button" id="pres_1" hx-get="http://192.168.100.88/cgi-bin/ptzctl.cgi?ptzcmd&poscall&1" hx-trigger="click" hx-target="body">1</button>
+        <button class="ptz-button" id="pres_2" hx-get="http://192.168.100.88/cgi-bin/ptzctl.cgi?ptzcmd&poscall&2" hx-trigger="click" hx-target="body">2</button>
+        <button class="ptz-button" id="pres_3" hx-get="http://192.168.100.88/cgi-bin/ptzctl.cgi?ptzcmd&poscall&3" hx-trigger="click" hx-target="body">3</button>
+        <button class="ptz-button" id="pres_4" hx-get="http://192.168.100.88/cgi-bin/ptzctl.cgi?ptzcmd&poscall&4" hx-trigger="click" hx-target="body">4</button>
+        <button class="ptz-button" id="pres_5" hx-get="http://192.168.100.88/cgi-bin/ptzctl.cgi?ptzcmd&poscall&5" hx-trigger="click" hx-target="body">5</button>
+        <button class="ptz-button" id="pres_6" hx-get="http://192.168.100.88/cgi-bin/ptzctl.cgi?ptzcmd&poscall&6" hx-trigger="click" hx-target="body">6</button>
+        <button class="ptz-button" id="pres_7" hx-get="http://192.168.100.88/cgi-bin/ptzctl.cgi?ptzcmd&poscall&7" hx-trigger="click" hx-target="body">7</button>
+        <button class="ptz-button" id="pres_8" hx-get="http://192.168.100.88/cgi-bin/ptzctl.cgi?ptzcmd&poscall&8" hx-trigger="click" hx-target="body">8</button>
+        <button class="ptz-button" id="pres_9" hx-get="http://192.168.100.88/cgi-bin/ptzctl.cgi?ptzcmd&poscall&9" hx-trigger="click" hx-target="body">9</button>
+        <button class="ptz-button" id="pres_0" hx-get="http://192.168.100.88/cgi-bin/ptzctrl.cgi?ptzcmd&home" hx-trigger="click" hx-target="body"><i class="pi pi-home"></i></button>
+        <button class="ptz-button" id="pres_0" hx-get="http://192.168.100.88/cgi-bin/ptzctl.cgi?ptzcmd&poscall&0" hx-trigger="click" hx-target="body">0</button>
+        <!-- <button class="ptz-button" id="pres_0" hx-get="http://192.168.100.88/cgi-bin/ptzctl.cgi?ptzcmd&poscall&0" hx-trigger="click" hx-target="body"><i class="pi pi-arrow-right"></i></button> -->
+    </div>
+</body>
+</html>
